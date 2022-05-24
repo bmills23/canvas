@@ -1,9 +1,3 @@
-//https://www.thecolorapi.com/
-/*api purpose:  can take any hex, rgb, cmyk, hsl, hsv formats 
-and convert them into a named color object
-maybe learn how to use canvas a little bit and DOM manipulate 
-an html element using API calls to the above colorapi*/
-
 const canvas = document.querySelector('canvas') //DO NOT COMMENT OUT
 
 canvas.width = window.innerWidth //self-explanatory 
@@ -12,7 +6,6 @@ canvas.height = window.innerHeight
 const c = canvas.getContext('2d') //returning drawing context
 
 // c.fillRect(x-coord., y-coord., width, height); 
-
 
 // c.fillStyle = "rgb(255,0,0)"
 // c.fillRect(100,100,100,100) //basically fills 100px square at (100,100)
@@ -48,17 +41,6 @@ const c = canvas.getContext('2d') //returning drawing context
 //     }
 // }, 50)
 
-
-
-
-
-
-
-//Animation//
-
- 
-
-     
 // function animate() {
 //         requestAnimationFrame(animate);
 //         c.clearRect(0, 0, innerWidth, innerHeight);
@@ -70,13 +52,17 @@ const c = canvas.getContext('2d') //returning drawing context
 //         circle.update()
 //     }
 
+
+
+
+//Animation//
+
 var mouse = {
     x: undefined,
     y: undefined
 }
 
-
-window.addEventListener('mousemove' || 'touch', function(event) {
+window.addEventListener('mousemove' || 'touch' || 'drag', function(event) {
     mouse.x = event.x;
     mouse.y = event.y;
 })
@@ -134,7 +120,7 @@ function Circle(x,y,dx,dy,radius) {
 
 const circleArray = [];
 
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 200; i++) {
     var x = Math.random() * (innerWidth - radius * 2) + radius; //prevents circles from getting stuck on sides
     var y = Math.random() * (innerHeight - radius * 2) + radius; //prevents circles from getting stuck above/below
     //the reason these guys will get stuck is because center spawns too close to edges and gets trapped
